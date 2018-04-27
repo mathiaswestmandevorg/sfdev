@@ -1,0 +1,3 @@
+<apex:page >
+  <apex:image url="{!$Resource.KyssingeImage}" width="100%" height="100%"/>
+</apex:page>

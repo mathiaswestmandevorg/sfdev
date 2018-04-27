@@ -1,0 +1,3 @@
+<apex:page >
+  <a href="/apex/BootstrapWaxholmScoreCard"><apex:image id="theImage" value="{!$Resource.WaxholmGK}" width="100%" height="100%"/></a>
+</apex:page>

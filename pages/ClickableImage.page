@@ -1,0 +1,3 @@
+<apex:page >
+    <a href="/apex/testClickableResult"><apex:image id="theImage" value="{!$Resource.WaxholmGK}" /></a>
+</apex:page>

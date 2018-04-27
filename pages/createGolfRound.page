@@ -1,0 +1,72 @@
+<apex:page docType="html-5.0" title="Create GolfRound">
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="GolfRound__c" fields="Id,Hole_1__c,Hole_2__c,Hole_3__c,Hole_4__c,Hole_5__c,Hole_6__c,Hole_7__c,Hole_8__c,Hole_9__c,Hole_10__c,Hole_11__c,Hole_12__c,Hole_13__c,Hole_14__c,Hole_15__c,Hole_16__c,Hole_17__c,Hole_18__c"/>
+    </apex:remoteObjects>
+    <div class="mypage">
+         Hole 1 :
+         <input type="number" id="holeNr1"/>
+        <br></br>
+         Hole 2:
+        <input type="number" id="holeNr2"/>
+        <br></br>
+         Hole 3:
+        <input type="number" id="holeNr3"/>
+        <br></br>
+         Hole 4:
+        <input type="number" id="holeNr4"/>
+        <br></br>
+         Hole 5:
+        <input type="number" id="holeNr5"/>
+        <br></br>
+         Hole 6:
+        <input type="number" id="holeNr6"/>
+        <br></br>
+         Hole 7:
+        <input type="number" id="holeNr7"/>
+        <br></br>
+         Hole 8:
+        <input type="number" id="holeNr8"/>
+        <br></br>
+         Hole 9:
+        <input type="number" id="holeNr9"/>
+        <br></br>
+         Hole10:<input type="number" id="holeNr10"/>
+        <br></br>
+         Hole11:<input type="number" id="holeNr11"/>
+        <br></br>
+         Hole12:<input type="number" id="holeNr12"/>
+        <br></br>
+         Hole13:<input type="number" id="holeNr13"/>
+        <br></br>
+         Hole14:<input type="number" id="holeNr14"/>
+        <br></br>
+         Hole15:<input type="number" id="holeNr15"/>
+        <br></br>
+         Hole16:<input type="number" id="holeNr16"/>
+        <br></br>
+         Hole17:<input type="number" id="holeNr17"/>
+        <br></br>
+         Hole18:<input type="number" id="holeNr18"/>
+        <br></br>
+        <button onclick="createRound()">Submit Form</button>
+    </div>
+    <script>
+        function createRound() {
+            var hole1 = document.getElementById("holeNr1").value;var hole2 = document.getElementById("holeNr2").value;var hole3 = document.getElementById("holeNr3").value;
+            var hole4 = document.getElementById("holeNr4").value;var hole5 = document.getElementById("holeNr5").value;var hole6 = document.getElementById("holeNr6").value;
+            var hole7 = document.getElementById("holeNr7").value;var hole8 = document.getElementById("holeNr8").value;var hole9 = document.getElementById("holeNr9").value;
+            var hole10 = document.getElementById("holeNr10").value;var hole11 = document.getElementById("holeNr11").value;var hole12 = document.getElementById("holeNr12").value;
+            var hole13 = document.getElementById("holeNr13").value;var hole14 = document.getElementById("holeNr14").value;var hole15 = document.getElementById("holeNr15").value;
+            var hole16 = document.getElementById("holeNr16").value;var hole17 = document.getElementById("holeNr17").value;var hole18 = document.getElementById("holeNr18").value;
+            var golfRound = new SObjectModel.GolfRound__c();
+            golfRound.create({Hole_1__c: hole1,Hole_2__c: hole2,Hole_3__c: hole3,Hole_4__c: hole4,Hole_5__c: hole5,Hole_6__c: hole6,Hole_7__c: hole7,Hole_8__c: hole8,Hole_9__c: hole9,Hole_10__c: hole10,Hole_11__c: hole11,Hole_12__c: hole12,Hole_13__c: hole13,Hole_14__c: hole14,Hole_15__c: hole15,Hole_16__c: hole16,Hole_17__c: hole17,Hole_18__c: hole18}, function(error, records) {
+                if (error) {
+                    alert(error.message);
+                } else {
+                   sforce.one.navigateToSObject(records[0]);
+                }
+            });
+        }
+       
+    </script>
+</apex:page>

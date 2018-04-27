@@ -1,0 +1,6 @@
+<apex:page >
+
+	<apex:outputLink value="http://internationalgolf.se/sv/banan/slopetabeller" id="theLink">International slope</apex:outputLink>
+
+
+</apex:page>

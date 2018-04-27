@@ -1,0 +1,215 @@
+<apex:page docType="html-5.0" title="Create GolfRound" controller="GolfRoundController">
+<script src="/soap/ajax/15.0/connection.js" type="text/javascript"></script>
+<script src="/soap/ajax/15.0/apex.js" type="text/javascript"></script>
+<link href="{!URLFOR($Resource.bootStrap, 'bootstrap/css/bootstrap.min.css')}" rel="stylesheet" media="screen"/>
+<apex:includeScript value="{!URLFOR($Resource.bootStrap, 'js/bootstrap.min.js')}"/>
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="GolfRound__c" fields="Id,Hole_1__c,Hole_2__c,Hole_3__c,Hole_4__c,Hole_5__c,Hole_6__c,Hole_7__c,Hole_8__c,Hole_9__c,Hole_10__c,Hole_11__c,Hole_12__c,Hole_13__c,Hole_14__c,Hole_15__c,Hole_16__c,Hole_17__c,Hole_18__c"/>
+    </apex:remoteObjects>
+     
+     
+    <html>
+       <body>
+        <div class="span4">
+        <h4>Waxholm GK</h4>
+         <apex:form > 
+         <table class="table table-bordered">
+        
+          <tr>
+               <td bgcolor="#ffff00">Yellow</td>
+               <td bgcolor="#00FF00">Par</td>
+               <td>HCP</td>
+               <td>Score</td>           
+              
+          </tr>
+          
+         <tr>
+              <td bgcolor="#ffff00">300</td>
+              <td bgcolor="#00FF00">4</td>
+              <td>12</td>
+              <td><input type="number" id="holeNr1" value="{!hole1}"/></td>
+            
+              
+          </tr>
+            
+          <tr>
+              <td bgcolor="#ffff00">468</td>
+              <td bgcolor="#00FF00">5</td>
+              <td>4</td>
+              <td><input type="number" id="holeNr2"/></td>
+           
+          </tr>
+          
+           <tr>
+              <td bgcolor="#ffff00">160</td>
+              <td bgcolor="#00FF00">3</td>
+              <td>6</td>
+              <td><input type="number" id="holeNr3"/></td>
+            
+          </tr>
+          
+          <tr>
+               <td bgcolor="#ffff00">327</td>
+               <td bgcolor="#00FF00">4</td>
+               <td>16</td>
+               <td><input type="number" id="holeNr4"/></td>
+              
+          </tr>
+          
+          <tr>
+               <td bgcolor="#ffff00">362</td>
+               <td bgcolor="#00FF00">4</td>
+               <td>2</td>
+               <td><input type="number" id="holeNr5"/></td>
+            
+          </tr>
+          
+          <tr>
+               <td bgcolor="#ffff00">273</td>
+               <td bgcolor="#00FF00">4</td>
+               <td>18</td>
+               <td><input type="number" id="holeNr6"/></td>
+              
+          </tr>
+          
+          <tr>
+               <td bgcolor="#ffff00">343</td>
+               <td bgcolor="#00FF00">4</td>
+               <td>8</td>
+               <td><input type="number" id="holeNr7"/></td>
+            
+          </tr>
+          
+          <tr>
+               <td bgcolor="#ffff00">454</td>
+               <td bgcolor="#00FF00">5</td>
+               <td>14</td>
+               <td><input type="number" id="holeNr8"/></td>
+             
+          </tr>
+          
+           <tr>
+               <td bgcolor="#ffff00">370</td>
+               <td bgcolor="#00FF00">4</td>
+               <td>10</td>
+               <td><input type="number" id="holeNr9"/></td>
+              
+          </tr>
+          
+          <tr>
+               <td bgcolor="#ffff00">303</td>
+               <td bgcolor="#00FF00">4</td>
+               <td>9</td>
+               <td><input type="number" id="holeNr10"/></td>
+             
+          </tr>
+          
+          <tr>
+               <td bgcolor="#ffff00">168</td>
+               <td bgcolor="#00FF00">3</td>
+               <td>17</td>
+               <td><input type="number" id="holeNr11"/></td>
+             
+          </tr>
+          
+          <tr>
+               <td bgcolor="#ffff00">329</td>
+               <td bgcolor="#00FF00">4</td>
+               <td>5</td>
+               <td><input type="number" id="holeNr12"/></td>
+            
+          </tr>
+          
+          
+           <tr>
+               <td bgcolor="#ffff00">337</td>
+               <td bgcolor="#00FF00">4</td>
+               <td>15</td>
+               <td><input type="number" id="holeNr13"/></td>
+            
+          </tr>
+          
+          <tr>
+               <td bgcolor="#ffff00">291</td>
+               <td bgcolor="#00FF00">4</td>
+               <td>1</td>
+               <td><input type="number" id="holeNr14"/></td>
+              
+          </tr>
+          
+          <tr>
+               <td bgcolor="#ffff00">488</td>
+               <td bgcolor="#00FF00">5</td>
+               <td>13</td>
+               <td><input type="number" id="holeNr15"/></td>
+          </tr>
+          
+          <tr>
+               <td bgcolor="#ffff00">357</td>
+               <td bgcolor="#00FF00">4</td>
+               <td>3</td>
+               <td><input type="number" id="holeNr16"/></td>
+          </tr>
+          
+           <tr>
+               <td bgcolor="#ffff00">465</td>
+               <td bgcolor="#00FF00">5</td>
+               <td>7</td>
+               <td><input type="number" id="holeNr17"/></td>
+              
+          </tr>
+          
+          <tr>
+               <td bgcolor="#ffff00">164</td>
+               <td bgcolor="#00FF00">3</td>
+               <td>11</td>
+               <td><input type="number" id="holeNr18"/></td>
+              
+          </tr>
+           
+        
+         </table>
+       
+          <apex:actionFunction action="{!test}" name="hold"/>
+
+         </apex:form>           
+          <p><button class="btn btn-success btn-block" onclick="createRound()">Save Round</button></p>   
+         </div>  
+      </body>
+   </html>
+   
+   
+   
+    <script>
+    
+  
+   
+    
+        function createRound() {
+        hold();
+     
+        
+       /*
+            sforce.apex.execute("GolfRoundController","test",{str:'bootstrap'});
+            var hole1 = document.getElementById("holeNr1").value;var hole2 = document.getElementById("holeNr2").value;var hole3 = document.getElementById("holeNr3").value;
+            var hole4 = document.getElementById("holeNr4").value;var hole5 = document.getElementById("holeNr5").value;var hole6 = document.getElementById("holeNr6").value;
+            var hole7 = document.getElementById("holeNr7").value;var hole8 = document.getElementById("holeNr8").value;var hole9 = document.getElementById("holeNr9").value;
+            var hole10 = document.getElementById("holeNr10").value;var hole11 = document.getElementById("holeNr11").value;var hole12 = document.getElementById("holeNr12").value;
+            var hole13 = document.getElementById("holeNr13").value;var hole14 = document.getElementById("holeNr14").value;var hole15 = document.getElementById("holeNr15").value;
+            var hole16 = document.getElementById("holeNr16").value;var hole17 = document.getElementById("holeNr17").value;var hole18 = document.getElementById("holeNr18").value;
+            var golfRound = new SObjectModel.GolfRound__c();
+            golfRound.create({Hole_1__c: hole1,Hole_2__c: hole2,Hole_3__c: hole3,Hole_4__c: hole4,Hole_5__c: hole5,Hole_6__c: hole6,Hole_7__c: hole7,Hole_8__c: hole8,Hole_9__c: hole9,Hole_10__c: hole10,Hole_11__c: hole11,Hole_12__c: hole12,Hole_13__c: hole13,Hole_14__c: hole14,Hole_15__c: hole15,Hole_16__c: hole16,Hole_17__c: hole17,Hole_18__c: hole18}, function(error, records) {
+                if (error) {
+                    alert(error.message);
+                } else {
+                   sforce.one.navigateToSObject(records[0]);
+                }
+            });
+        
+        */
+      }
+       
+    </script>
+    
+   
+</apex:page>

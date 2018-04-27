@@ -1,0 +1,9 @@
+<apex:page standardController="Contact" >
+
+    <apex:form >
+        <apex:outputField value="{! Contact.AssistantName }"/>
+        <p>AssistantPhone<a href=" Assistant's phone number: " value = "{! Contact.AssistantPhone }"> click here </a></p>
+        <p>Book now, call <a href="tel:01234567890">01234 567 890</a></p>
+    </apex:form>
+    
+</apex:page>

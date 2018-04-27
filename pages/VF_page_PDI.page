@@ -1,0 +1,21 @@
+<apex:page standardController="Post_Decision_Interview__c" extensions="ChartController" >
+    <apex:chart height="200" width="100%" data="{!data}" >
+        
+         <apex:axis type="Numeric"  position="left" fields="data1,data2" margin="20"
+            title="Comparison" grid="true">
+         </apex:axis>  
+            
+         
+         <apex:axis type="Category" position="bottom" fields="name"
+            title="Rating Nordics - CC">
+        </apex:axis>
+        
+         <apex:lineSeries axis="left" xField="name" yField="data1" 
+          markerType="cross" markerSize="4" markerFill="#FF0000">
+       </apex:lineSeries>
+          
+          
+        <apex:lineSeries axis="left" xField="name" yField="data2"
+           markerType="circle" markerSize="4" markerFill="#8E35EF"/>
+   </apex:chart>
+</apex:page>

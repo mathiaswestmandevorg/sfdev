@@ -1,0 +1,5 @@
+<apex:page standardController="Article_Folder__c" extensions="ArticleController">
+    <div style="height: 200px" class="bodyDiv" onclick="resizeFrame();">
+        <c:ArticleHierarchyTree currentIdArticleFolder="{!Id}" />
+    </div>
+</apex:page>

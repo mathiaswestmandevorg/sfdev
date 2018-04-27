@@ -1,0 +1,65 @@
+<apex:page sidebar="false" controller="StockChart_Controller">
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+<style type="text/css">
+	.buttonStyle { width:100%; text-align:center; padding-top:4px; }
+</style>
+
+	<apex:form id="form">
+			<apex:commandButton title="Latest Data" value="Update Market" id="theButton" styleClass="buttonStyle" style="  background: #2dfb2d"/>
+
+         
+    			<apex:selectList title="Currency Pair" value="{!pair}" size="1">
+                		<apex:selectOption itemValue="SEK" itemLabel="USD/SEK"/>
+                		<apex:selectOption itemValue="GBP" itemLabel="GBP/USD"/>
+                		<apex:selectOption itemValue="EUR" itemLabel="EUR/USD"/>
+          </apex:selectList>
+    
+          <apex:actionFunction name="getMarketData" action="{!save}"/>
+        	<apex:selectList onchange="getMarketData()" title="Stock" id="chooseStock" value="{!stock}" size="1">
+            		<apex:selectOption itemValue="GOOG" itemLabel="Alphabet Class C"/>
+            		<apex:selectOption itemValue="TSLA" itemLabel="Tesla Inc"/>
+            		<apex:selectOption itemValue="MSFT" itemLabel="Microsoft Corp"/>
+        	</apex:selectList>
+
+        	<apex:selectList title="Period" id="choosePeriod" value="{!period}" size="1">
+            		<apex:selectOption itemValue="DAILY" itemLabel="days"/>
+            		<apex:selectOption itemValue="WEEKLY" itemLabel="weeks"/>
+            		<apex:selectOption itemValue="MONTHLY" itemLabel="months"/>
+        	</apex:selectList>
+
+	</apex:form>
+    <apex:chart height="600" width="100%" data="{!data}">
+          <apex:axis type="Numeric" position="left" fields="data1"
+            title="%" grid="true"/>
+          <apex:axis type="Category" position="bottom" fields="name"
+            title="Time">
+          </apex:axis>
+          <apex:lineSeries axis="left" fill="true" fillColor="#42f480" xField="name" yField="data1"
+              markerType="cross" markerSize="4" markerFill="#FF0000"/>
+
+          <!--
+          <apex:lineSeries axis="left" xField="name" yField="data2"
+            markerType="circle" markerSize="4" markerFill="#8E35EF"/>
+            -->
+            
+    </apex:chart>
+
+
+<script type="text/javascript">
+
+
+/*
+ function getMarketData(){ 
+       $( "#currencyDiv" ).hide( "slow", function() {
+        alert( "Animation complete." );
+      });
+ 
+    }
+*/
+
+</script>
+
+
+
+
+</apex:page>

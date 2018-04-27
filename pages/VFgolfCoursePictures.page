@@ -1,0 +1,49 @@
+<apex:page standardController="Golf_Course__c">
+    <div style="width:100%;text-align:center">
+
+        <apex:outputPanel rendered="{!Golf_Course__c.Name= 'Waxholm GK'}">
+            <apex:image url="/servlet/servlet.FileDownload?file=01524000001FEFA" />
+        </apex:outputPanel> 
+        
+         <apex:outputPanel rendered="{!Golf_Course__c.Name= 'Sundsta GK'}">
+            <apex:image url="/servlet/servlet.FileDownload?file=01524000001FEGN" />
+        </apex:outputPanel>
+        
+         <apex:outputPanel rendered="{!Golf_Course__c.Name= 'Lisinge'}">
+            <apex:image url="/servlet/servlet.FileDownload?file=01524000001FEH6" />
+        </apex:outputPanel> 
+        
+          <apex:outputPanel rendered="{!Golf_Course__c.Name= 'Fors GK'}">
+            <apex:image url="/servlet/servlet.FileDownload?file=01524000001FEHa" />
+        </apex:outputPanel>
+        
+         <apex:outputPanel rendered="{!Golf_Course__c.Name= 'Riksten GK'}">
+            <apex:image url="/servlet/servlet.FileDownload?file=01524000001FEHk" />
+        </apex:outputPanel> 
+        
+          <apex:outputPanel rendered="{!Golf_Course__c.Name= 'Grödinge'}">
+            <apex:image url="/servlet/servlet.FileDownload?file=01524000001FEHu" />
+        </apex:outputPanel>  
+        
+          <apex:outputPanel rendered="{!Golf_Course__c.Name= 'Kyssinge 1-18'}">
+            <apex:image url="/servlet/servlet.FileDownload?file=01524000001FEI9" />
+        </apex:outputPanel>
+        
+         <apex:outputPanel rendered="{!Golf_Course__c.Name= 'Kyssinge 19-9'}">
+            <apex:image url="/servlet/servlet.FileDownload?file=01524000001FEI9" />
+        </apex:outputPanel> 
+        
+          <apex:outputPanel rendered="{!Golf_Course__c.Name= 'Kyssinge 10-27'}">
+            <apex:image url="/servlet/servlet.FileDownload?file=01524000001FEI9" />
+        </apex:outputPanel> 
+        
+         <apex:outputPanel rendered="{!Golf_Course__c.Name= 'Viksberg'}">
+            <apex:image url="/servlet/servlet.FileDownload?file=01524000001FKg9" />
+        </apex:outputPanel>    
+        
+       
+       
+    
+    </div>
+
+</apex:page>

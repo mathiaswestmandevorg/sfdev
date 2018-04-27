@@ -1,0 +1,14 @@
+<apex:page standardController="Golf_Course__c">
+     <div style="width:100%;text-align:center">
+  
+        <apex:outputPanel rendered="{!Golf_Course__c.Name= 'Waxholm GK'}">
+            <apex:image url="/servlet/servlet.FileDownload?file=01524000001FQdS" />
+        </apex:outputPanel> 
+        
+         <apex:outputPanel rendered="{!Golf_Course__c.Name= 'Sundsta GK'}">
+            <apex:image url="/servlet/servlet.FileDownload?file=01524000001FEGN" />
+        </apex:outputPanel>
+        
+    </div>
+
+</apex:page>
